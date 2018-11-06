@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+//Importing Routes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -16,6 +16,7 @@ import { HotelsComponent } from './hotels/hotels/hotels.component';
 import { HotelsDetailsComponent } from './hotels/hotels-details/hotels-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
+//Registering Routes
 @NgModule({
   declarations: [
     AppComponent,

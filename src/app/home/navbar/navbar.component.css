@@ -1,0 +1,9 @@
+body {
+    
+    min-height:75rem;
+  }
+  /* filling the gap between navbar and carsouel component... */
+  .mb-4, .my-4 {
+    margin-bottom: 0.0rem!important;
+    background-color:pink;
+}
