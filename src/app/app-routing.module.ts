@@ -8,23 +8,16 @@ import { HotelEventsComponent } from './home/hotel-events/hotel-events.component
 import { HotelsDetailsComponent } from './hotels/hotels-details/hotels-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 //creating routing object...a meta object
-const routing: Routes = [{
-  path: '', component: HomeComponent
-}, {
-   path: 'home', component: HomeComponent
-}, {
-   path: 'login', component: LoginComponent
-}, {
-  path: 'register', component: RegistrationComponent
-}, {
-  path: 'hotels', component: HotelsComponent
-}, {
-   path: 'hotels/events', component: HotelEventsComponent
-}, {
-  path: 'hotels/:hotelId', component: HotelsDetailsComponent
-}, {
-  path: '**', component: NotFoundComponent
-}];
+const routing: Routes = [
+  {path: '', component: HomeComponent}, 
+  {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegistrationComponent},
+  {path: 'hotels', component: HotelsComponent},
+  {path: 'hotels/events', component: HotelEventsComponent},
+  {path: 'hotels/:hotelId', component: HotelsDetailsComponent},
+  {path: '**', component: NotFoundComponent}
+];
 
 
 @NgModule({
