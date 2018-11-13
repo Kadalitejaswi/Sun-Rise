@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 //Importing Routes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,11 @@ import { TopRatedHotelsComponent } from './home/top-rated-hotels/top-rated-hotel
 import { HotelsComponent } from './hotels/hotels/hotels.component';
 import { HotelsDetailsComponent } from './hotels/hotels-details/hotels-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HotelsService } from './services/hotels.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
+import { RoutingGuard } from './auth/routing.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 //Registering Routes
 @NgModule({
@@ -35,9 +41,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [HotelsService,AuthService,RoutingGuard,{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
