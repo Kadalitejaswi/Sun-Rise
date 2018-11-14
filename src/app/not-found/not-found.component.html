@@ -1,15 +1,19 @@
 <div style="margin-top:100px;border:2px solid blue;">
 
-<!-- <div *ngIf="techs.length>0">
- <h1>List Of Technologies</h1>
- <p>{{techs}}</p>
-<div *ngIf="techs.length == 0">
-No Technologies Found
-</div> -->
-<!-- for else -->
-<!-- <div *ngIf="techs.length>0 else noTech"> -->
-
-<!-- for then -->
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" (click)="changeMode('Map')">Map View</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="changeMode('List')">List View</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="changeMode('Other')" >Other</a>
+  </li>
+</ul>
+<div [ngSwitch]="viewMode">
+<h1 *ngSwitchCase="'Map'">Map View Content Hear!</h1>
+<div *ngSwitchCase="'List'">List View Content Hear:
 <div *ngIf="techs.length>0 ; then techList else noTech "></div>
 <ng-template #techList>
  <h1>List Of Technologies</h1>
@@ -21,7 +25,33 @@ No Technologies Found
 
  <ng-template #noTech>
  <h1>Not Tech Avaliable</h1>
- </ng-template>
+ </ng-template> 
+</div>
+<h1 *ngSwitchDefault>Other View Content Hear!</h1>
+</div>
+
+<!-- <div *ngIf="techs.length>0">
+ <h1>List Of Technologies</h1>
+ <p>{{techs}}</p>
+<div *ngIf="techs.length == 0">
+No Technologies Found
+</div> -->
+<!-- for else -->
+<!-- <div *ngIf="techs.length>0 else noTech"> -->
+
+<!-- for then -->
+<!-- <div *ngIf="techs.length>0 ; then techList else noTech "></div>
+<ng-template #techList>
+ <h1>List Of Technologies</h1>
+ <!-- <p>{{techs}}</p> -->
+ <!-- <ul>
+ <li *ngFor=" let tech of techs">{{tech}}</li>
+ </ul>
+ </ng-template> -->
+
+ <!-- <ng-template #noTech>
+ <h1>Not Tech Avaliable</h1>
+ </ng-template> --> 
 
  <!-- <div hidden>
  List of Technologies
@@ -37,6 +67,6 @@ No Technologies Found
  Not Tech Yet
  </div> -->
 
-</div>
+<!-- </div> -->
 
 

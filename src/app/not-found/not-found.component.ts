@@ -8,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class NotFoundComponent implements OnInit {
   techs = ["HTML","CSS","JavaSscript","Mongodb","NodeJs"];
   // techs = [];
+  // viewMode:string="Map";
+  viewMode:string="";
+
 
   constructor() { }
 
   ngOnInit() {
   }
-
+changeMode(mode:string):void{
+  this.viewMode=mode;
+}
 }
