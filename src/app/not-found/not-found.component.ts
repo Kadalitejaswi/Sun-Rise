@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent implements OnInit {
+  techs = ["HTML","CSS","JavaSscript","Mongodb","NodeJs"];
+  // techs = [];
 
   constructor() { }
 

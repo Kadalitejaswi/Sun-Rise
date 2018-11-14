@@ -1,3 +1,42 @@
-<p>
-  not-found works!
-</p>
+<div style="margin-top:100px;border:2px solid blue;">
+
+<!-- <div *ngIf="techs.length>0">
+ <h1>List Of Technologies</h1>
+ <p>{{techs}}</p>
+<div *ngIf="techs.length == 0">
+No Technologies Found
+</div> -->
+<!-- for else -->
+<!-- <div *ngIf="techs.length>0 else noTech"> -->
+
+<!-- for then -->
+<div *ngIf="techs.length>0 ; then techList else noTech "></div>
+<ng-template #techList>
+ <h1>List Of Technologies</h1>
+ <!-- <p>{{techs}}</p> -->
+ <ul>
+ <li *ngFor=" let tech of techs">{{tech}}</li>
+ </ul>
+ </ng-template>
+
+ <ng-template #noTech>
+ <h1>Not Tech Avaliable</h1>
+ </ng-template>
+
+ <!-- <div hidden>
+ List of Technologies
+ </div>
+ <div>
+ Not Tech Yet
+ </div> -->
+
+  <!-- <div [hidden]='!techs.length > 0'>
+ List of Technologies
+ </div>
+ <div [hidden]='!techs.length == 0'>
+ Not Tech Yet
+ </div> -->
+
+</div>
+
+
