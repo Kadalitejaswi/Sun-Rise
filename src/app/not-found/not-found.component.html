@@ -1,6 +1,36 @@
-<div style="margin-top:100px;border:2px solid blue;">
+<div style="divContainer">
+<h1 [className]="isColored?'specHead':'no-specHead'">Heading</h1>
+<!-- Add Classes as array to ngClass Directive -->
+<div [ngClass]="['style1','style2','style3']">
+<p>This is Sample Paragraph</p>
+</div>
+<!-- same syntax -->
+<!-- adding classes as multiple string to ngclass Directive -->
+<div [ngClass]="'style1 style2 style3'">
+<p>This is Sample Paragraph</p>
+</div>
+<!-- adding classes as object to ngclass directive -->
+<div [ngClass]="{'style1':true,'style3':true}">
+<p>This is Sample Paragraph</p>
+</div>
+<div [ngClass]="{'style1':isColored,'style2':isColored}">
+<p>This is Sample Paragraph</p>
+</div>
 
-<ul class="nav nav-tabs">
+<button (click)='changeColor()'>Change Color </button>
+
+</div >
+<!-- <h1 [style.color]="isColored?'blue':'red'"
+[style.backgroundColor]="isColored?'grey':'yellow'"
+[style.fontWeight]="isColored?'400':'600'"
+>Heading in Style</h1>
+<h1 [ngStyle]="{'background-color':'pink'}">This is New Heading</h1>
+<h1 [ngStyle]="{'background-color':isColored?'grey':'yellow'}">This is 2nd New Heading</h1>
+
+<button (click)='changeColor()'>Change Color </button> -->
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+<!-- <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" (click)="changeMode('Map')">Map View</a>
   </li>
@@ -9,8 +39,8 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" (click)="changeMode('Other')" >Other</a>
-  </li>
-</ul>
+  </li> -->
+<!-- </ul>
 <div [ngSwitch]="viewMode">
 <h1 *ngSwitchCase="'Map'">Map View Content Hear!</h1>
 <div *ngSwitchCase="'List'">List View Content Hear:
@@ -18,17 +48,17 @@
 <ng-template #techList>
  <h1>List Of Technologies</h1>
  <!-- <p>{{techs}}</p> -->
- <ul>
+ <!-- <ul>
  <li *ngFor=" let tech of techs">{{tech}}</li>
  </ul>
- </ng-template>
+ </ng-template> --> 
 
- <ng-template #noTech>
+ <!-- <ng-template #noTech>
  <h1>Not Tech Avaliable</h1>
  </ng-template> 
 </div>
-<h1 *ngSwitchDefault>Other View Content Hear!</h1>
-</div>
+<h1 *ngSwitchDefault>Other View Content Hear!</h1> -->
+<!-- </div> -->
 
 <!-- <div *ngIf="techs.length>0">
  <h1>List Of Technologies</h1>

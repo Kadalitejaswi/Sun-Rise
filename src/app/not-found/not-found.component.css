@@ -1,0 +1,32 @@
+.divContainer{
+    margin-top:100px !important;
+    margin:20px;
+    padding:10px;
+    border:2px solid blue;
+}
+.specHead{
+    color:red;
+    background-color:grey;
+    font-size: 3rem;
+
+}
+.no-specHead{
+    color:blue;
+    background-color:yellow;
+    font-size: 1rem;
+}
+.style1{
+    color:purple;
+    text-align: center;
+
+}
+.style2{
+    background-color:mediumslateblue;
+    font-family:monospace;
+    
+}
+.style3{
+    background-color:violet;
+    font-size:100px;
+    
+}

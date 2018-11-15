@@ -9,6 +9,7 @@ export class NotFoundComponent implements OnInit {
   techs = ["HTML","CSS","JavaSscript","Mongodb","NodeJs"];
   // techs = [];
   // viewMode:string="Map";
+  isColored:boolean=false;
   viewMode:string="";
 
 
@@ -18,5 +19,8 @@ export class NotFoundComponent implements OnInit {
   }
 changeMode(mode:string):void{
   this.viewMode=mode;
+}
+changeColor(){
+  this.isColored=!this.isColored;
 }
 }
